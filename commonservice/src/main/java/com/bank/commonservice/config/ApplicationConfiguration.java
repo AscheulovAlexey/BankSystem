@@ -1,6 +1,5 @@
 package com.bank.commonservice.config;
 
-import com.bank.commonservice.service.CheckAccountParametersService;
 import com.bank.commonservice.service.AccountParametersService;
 import com.bank.commonservice.service.AccountMoneyService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,11 +26,6 @@ public class ApplicationConfiguration {
     @Bean
     public HttpHeaders httpHeaders(){
         return new HttpHeaders();
-    }
-
-    @Bean
-    public CheckAccountParametersService checkAccountParametersService(){
-        return new CheckAccountParametersService(getAccountParametersService());
     }
 
     @Bean

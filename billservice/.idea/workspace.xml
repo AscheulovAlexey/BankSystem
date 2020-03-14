@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e9abe80-83c2-4fd1-8e82-c208248ebd5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../customerservice/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/bill/controller/BillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/bill/controller/BillController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/bill/controller/dto/BillRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/bill/controller/dto/BillRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/bill/controller/dto/BillResponseGetBillDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/bill/controller/dto/BillResponseGetBillDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/bill/controller/dto/BillResponseGetByCustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/bill/controller/dto/BillResponseGetByCustomerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/bill/controller/dto/TransferBetweenBillsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/bill/controller/dto/TransferBetweenBillsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/bill/controller/BillController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/bill/controller/BillController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/bill/controller/dto/BillRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/bill/controller/dto/BillRequestDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/bill/controller/dto/BillResponseGetBillDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/bill/controller/dto/BillResponseGetBillDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/bill/controller/dto/BillResponseGetByCustomerDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/bill/controller/dto/BillResponseGetByCustomerDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/bill/controller/dto/TransferBetweenBillsDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/bill/controller/dto/TransferBetweenBillsDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/build/classes/java/main/com/bank/commonservice/controller/dto/AccountResponseDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/build/classes/java/main/com/bank/commonservice/controller/dto/AccountResponseDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/build/classes/java/main/com/bank/commonservice/service/CheckAccountParametersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/build/classes/java/main/com/bank/commonservice/service/CheckAccountParametersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/build/classes/java/main/com/bank/commonservice/service/GetAccountParametersService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/src/main/java/com/bank/commonservice/config/ApplicationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/src/main/java/com/bank/commonservice/config/ApplicationConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/src/main/java/com/bank/commonservice/controller/dto/AccountResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/src/main/java/com/bank/commonservice/controller/dto/AccountResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/src/main/java/com/bank/commonservice/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/src/main/java/com/bank/commonservice/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/src/main/java/com/bank/commonservice/service/CheckAccountParametersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/src/main/java/com/bank/commonservice/service/CheckAccountParametersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/src/main/java/com/bank/commonservice/service/GetAccountParametersService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../commonservice/src/main/java/com/bank/commonservice/service/TransferAccountMoneyService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../customerservice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../customerservice/target/classes/com/bank/customerservice/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../customerservice/target/classes/com/bank/customerservice/controller/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../commonservice/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../commonservice/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +79,7 @@
       <workItem from="1582715167627" duration="24798000" />
       <workItem from="1583070903600" duration="2926000" />
       <workItem from="1584048548250" duration="3220000" />
-      <workItem from="1584138040118" duration="2205000" />
+      <workItem from="1584138040118" duration="2645000" />
     </task>
     <servers />
   </component>
