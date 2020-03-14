@@ -37,7 +37,7 @@ public class BillController {
     }
 
     @GetMapping("/bill/customer{customerId}")
-    public List<BillResponseGetByCustomerDTO> getBillsByCustomerId(@PathVariable Long customerId){
+    public BillListResponseGetByCustomerDTO getBillsByCustomerId(@PathVariable Long customerId){
         ArrayList<Bill> bills = (ArrayList<Bill>) billService.findBillsByCustomerId(customerId);
 
         List<BillResponseGetByCustomerDTO> billsResponseDTO = new ArrayList<>(bills.size());
@@ -45,7 +45,7 @@ public class BillController {
             billsResponseDTO.add(new BillResponseGetByCustomerDTO(bills.get(i).getId(), bills.get(i).getBalance()));
         }
 
-        return billsResponseDTO;
+        return new BillListResponseGetByCustomerDTO(billsResponseDTO);
     }
 
     @PutMapping("/bill/adjustment/{id}")

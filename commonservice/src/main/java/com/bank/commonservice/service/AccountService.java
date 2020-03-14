@@ -7,27 +7,24 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.List;
 
 
 @Service
 public class AccountService {
 
-    private final CheckAccountParametersService checkAccountParametersService;
-    private final GetAccountParametersService getAccountParametersService;
-    private final TransferAccountMoneyService transferAccountMoneyService;
+    private final AccountParametersService accountParametersService;
+    private final AccountMoneyService accountMoneyService;
 
-    public AccountService(CheckAccountParametersService checkAccountParametersService,
-                          GetAccountParametersService getAccountParametersService,
-                          TransferAccountMoneyService transferAccountMoneyService) {
-
-        this.checkAccountParametersService = checkAccountParametersService;
-        this.getAccountParametersService = getAccountParametersService;
-        this.transferAccountMoneyService = transferAccountMoneyService;
+    public AccountService(AccountParametersService accountParametersService,
+                          AccountMoneyService accountMoneyService) {
+        this.accountParametersService = accountParametersService;
+        this.accountMoneyService = accountMoneyService;
     }
 
     public AccountResponseDTO getAccount(Long customerId){
-        CustomerResponseDTO customerResponseDTO = getAccountParametersService.getCustomer(customerId);
-        BillResponseDTO[] bills = getAccountParametersService.getBills(customerId);
+        CustomerResponseDTO customerResponseDTO = accountParametersService.getCustomer(customerId);
+        List<BillResponseDTO> bills = accountParametersService.getBills(customerId);
 
         return new AccountResponseDTO(customerResponseDTO, bills);
     }
@@ -35,11 +32,11 @@ public class AccountService {
     public TransferResponseDTO transferMoneyFromOneBillToAnotherBill(
             Long customerId, Long firstBillId, Long secondBillId, BigDecimal transaction) throws IOException {
 
-        checkAccountParametersService.checkParametersOneCustomer(customerId, firstBillId, secondBillId, transaction);
-        ResponseEntity<String> responsePayment = transferAccountMoneyService.postRequestPayment(firstBillId, transaction);
-        ResponseEntity<String> responseAdjustment = transferAccountMoneyService.postRequestAdjustment(secondBillId, transaction);
-        BillResponseGetBillDTO paymentToJSON = transferAccountMoneyService.getResponsePayment(responsePayment);
-        BillResponseGetBillDTO adjustmentToJSON = transferAccountMoneyService.getResponseAdjustment(responseAdjustment);
+        accountParametersService.checkParametersOneCustomer(customerId, firstBillId, secondBillId, transaction);
+        ResponseEntity<String> responsePayment = accountMoneyService.postRequestPayment(firstBillId, transaction);
+        ResponseEntity<String> responseAdjustment = accountMoneyService.postRequestAdjustment(secondBillId, transaction);
+        BillResponseGetBillDTO paymentToJSON = accountMoneyService.getResponsePayment(responsePayment);
+        BillResponseGetBillDTO adjustmentToJSON = accountMoneyService.getResponseAdjustment(responseAdjustment);
 
         return new TransferResponseDTO(paymentToJSON, adjustmentToJSON);
     }

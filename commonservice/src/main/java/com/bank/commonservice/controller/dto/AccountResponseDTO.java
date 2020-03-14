@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -14,6 +15,8 @@ public class AccountResponseDTO {
     @NotNull(message = "Should be initialized")
     private CustomerResponseDTO customerResponseDTO;
 
-    private BillResponseDTO[] billResponseDTO;
+    //private BillResponseDTO[] billResponseDTO;
+
+    private List<BillResponseDTO> billListResponseDTO;
 
 }
