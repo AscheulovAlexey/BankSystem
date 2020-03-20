@@ -15,8 +15,6 @@ public class AccountResponseDTO {
     @NotNull(message = "Should be initialized")
     private CustomerResponseDTO customerResponseDTO;
 
-    //private BillResponseDTO[] billResponseDTO;
-
     private List<BillResponseDTO> billListResponseDTO;
 
 }

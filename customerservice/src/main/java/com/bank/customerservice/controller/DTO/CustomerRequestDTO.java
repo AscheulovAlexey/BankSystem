@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Getter
 @NoArgsConstructor
@@ -21,4 +22,11 @@ public class CustomerRequestDTO {
     @NotNull @Email(message = "Should be mail")
     private String mail;
 
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if (o == null && getClass()!= o.getClass()) return false;
+
+        CustomerRequestDTO cr = (CustomerRequestDTO) o;
+        return name == cr.getName();
+    }
 }

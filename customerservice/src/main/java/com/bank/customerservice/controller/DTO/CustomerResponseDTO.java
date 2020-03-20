@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Getter
 @NoArgsConstructor
@@ -29,4 +30,5 @@ public class CustomerResponseDTO {
         this.phone = customer.getPhone();
         this.mail = customer.getMail();
     }
+
 }

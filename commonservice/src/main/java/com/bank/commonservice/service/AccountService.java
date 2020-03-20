@@ -32,7 +32,24 @@ public class AccountService {
     public TransferResponseDTO transferMoneyFromOneBillToAnotherBill(
             Long customerId, Long firstBillId, Long secondBillId, BigDecimal transaction) throws IOException {
 
-        accountParametersService.checkParametersOneCustomer(customerId, firstBillId, secondBillId, transaction);
+        accountParametersService.checkParametersOneCustomer(customerId, firstBillId, transaction);
+        accountParametersService.checkParametersOneCustomer(customerId, secondBillId, transaction);
+        //accountParametersService.checkParametersOneCustomer(customerId, firstBillId, secondBillId, transaction);
+        ResponseEntity<String> responsePayment = accountMoneyService.postRequestPayment(firstBillId, transaction);
+        ResponseEntity<String> responseAdjustment = accountMoneyService.postRequestAdjustment(secondBillId, transaction);
+        BillResponseGetBillDTO paymentToJSON = accountMoneyService.getResponsePayment(responsePayment);
+        BillResponseGetBillDTO adjustmentToJSON = accountMoneyService.getResponseAdjustment(responseAdjustment);
+
+        return new TransferResponseDTO(paymentToJSON, adjustmentToJSON);
+    }
+
+    public TransferResponseDTO transferMoneyFromOneCustomerToAnotherCustomer(
+            Long customerFirstId, Long firstBillId,
+            Long customerSecondId, Long secondBillId,
+            BigDecimal transaction) throws IOException {
+
+        accountParametersService.checkParametersOneCustomer(customerFirstId, firstBillId, transaction);
+        accountParametersService.checkParametersOneCustomer(customerSecondId, secondBillId, transaction);
         ResponseEntity<String> responsePayment = accountMoneyService.postRequestPayment(firstBillId, transaction);
         ResponseEntity<String> responseAdjustment = accountMoneyService.postRequestAdjustment(secondBillId, transaction);
         BillResponseGetBillDTO paymentToJSON = accountMoneyService.getResponsePayment(responsePayment);

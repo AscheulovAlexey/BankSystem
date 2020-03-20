@@ -1,0 +1,8 @@
+/billservice/.idea
+/billservice/target
+/customerservice/.idea
+/customerservice/target
+/commonservice/.idea/
+/commonservice/.gradle/
+/commonservice/build/
+/commonservice/gradle/

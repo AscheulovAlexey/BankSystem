@@ -20,4 +20,5 @@ public class TransferBetweenBillsDTO {
 
     @NotNull(message = "Should be initialized")
     private BigDecimal balance;
+
 }

@@ -36,27 +36,43 @@ public class AccountParametersService {
         this.restTemplate = restTemplate;
     }
 
-    public void checkParametersOneCustomer(Long customerId, Long firstBillId, Long secondBillId,
-                                           BigDecimal transaction){
+    public void checkParametersOneCustomer(Long customerId, Long billId, BigDecimal transaction){
 
-        BillResponseGetBillDTO firstBill = getBill(firstBillId);
-        BillResponseGetBillDTO secondBill = getBill(secondBillId);
+        BillResponseGetBillDTO firstBill = getBill(billId);
 
         if (firstBill.getBalance().compareTo(transaction) == -1){
-            throw new NotEnoughMoneyException("Not enough money on bill with id = " + firstBillId +
+            throw new NotEnoughMoneyException("Not enough money on bill with id = " + billId +
                     ". Current balance = " + firstBill.getBalance());
         }
 
         if (firstBill.getCustomerId() != customerId){
-            throw new BillNotBelongThisCustomerException("bill with id = " + firstBillId +
+            throw new BillNotBelongThisCustomerException("bill with id = " + billId +
                     " not belong customer with id = " + customerId);
         }
 
-        if (secondBill.getCustomerId() != customerId){
-            throw new BillNotBelongThisCustomerException("bill with id = " + firstBillId +
-                    " not belong customer with id = " + customerId);
-        }
     }
+
+//    public void checkParametersOneCustomer(Long customerId, Long firstBillId, Long secondBillId,
+//                                           BigDecimal transaction){
+//
+//        BillResponseGetBillDTO firstBill = getBill(firstBillId);
+//        BillResponseGetBillDTO secondBill = getBill(secondBillId);
+//
+//        if (firstBill.getBalance().compareTo(transaction) == -1){
+//            throw new NotEnoughMoneyException("Not enough money on bill with id = " + firstBillId +
+//                    ". Current balance = " + firstBill.getBalance());
+//        }
+//
+//        if (firstBill.getCustomerId() != customerId){
+//            throw new BillNotBelongThisCustomerException("bill with id = " + firstBillId +
+//                    " not belong customer with id = " + customerId);
+//        }
+//
+//        if (secondBill.getCustomerId() != customerId){
+//            throw new BillNotBelongThisCustomerException("bill with id = " + firstBillId +
+//                    " not belong customer with id = " + customerId);
+//        }
+//    }
 
     public CustomerResponseDTO getCustomer(Long customerId){
 
