@@ -31,7 +31,7 @@ public class AccountMoneyService {
         this.objectMapper = objectMapper;
     }
 
-    public ResponseEntity<String> postRequestPayment(Long firstBillId, BigDecimal transaction){
+    public ResponseEntity<String> postRequestPayment(Long firstBillId, BigDecimal transaction) {
         StringBuilder billPaymentURL = new StringBuilder(billPaymentUrl);
         billPaymentURL.append(firstBillId);
 
@@ -49,7 +49,7 @@ public class AccountMoneyService {
         return restTemplate.exchange(billPaymentURL.toString(), HttpMethod.PUT, entityPayment, String.class);
     }
 
-    public ResponseEntity<String> postRequestAdjustment(Long secondBillId, BigDecimal transaction){
+    public ResponseEntity<String> postRequestAdjustment(Long secondBillId, BigDecimal transaction) {
         StringBuilder billAdjustmentURL = new StringBuilder(billAdjustmentUrl);
         billAdjustmentURL.append(secondBillId);
 

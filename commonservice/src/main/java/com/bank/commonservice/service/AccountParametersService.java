@@ -36,45 +36,23 @@ public class AccountParametersService {
         this.restTemplate = restTemplate;
     }
 
-    public void checkParametersOneCustomer(Long customerId, Long billId, BigDecimal transaction){
+    public void checkParametersOneCustomer(Long customerId, Long billId, BigDecimal transaction) {
 
         BillResponseGetBillDTO firstBill = getBill(billId);
 
-        if (firstBill.getBalance().compareTo(transaction) == -1){
+        if (firstBill.getBalance().compareTo(transaction) == -1) {
             throw new NotEnoughMoneyException("Not enough money on bill with id = " + billId +
                     ". Current balance = " + firstBill.getBalance());
         }
 
-        if (firstBill.getCustomerId() != customerId){
+        if (firstBill.getCustomerId() != customerId) {
             throw new BillNotBelongThisCustomerException("bill with id = " + billId +
                     " not belong customer with id = " + customerId);
         }
 
     }
 
-//    public void checkParametersOneCustomer(Long customerId, Long firstBillId, Long secondBillId,
-//                                           BigDecimal transaction){
-//
-//        BillResponseGetBillDTO firstBill = getBill(firstBillId);
-//        BillResponseGetBillDTO secondBill = getBill(secondBillId);
-//
-//        if (firstBill.getBalance().compareTo(transaction) == -1){
-//            throw new NotEnoughMoneyException("Not enough money on bill with id = " + firstBillId +
-//                    ". Current balance = " + firstBill.getBalance());
-//        }
-//
-//        if (firstBill.getCustomerId() != customerId){
-//            throw new BillNotBelongThisCustomerException("bill with id = " + firstBillId +
-//                    " not belong customer with id = " + customerId);
-//        }
-//
-//        if (secondBill.getCustomerId() != customerId){
-//            throw new BillNotBelongThisCustomerException("bill with id = " + firstBillId +
-//                    " not belong customer with id = " + customerId);
-//        }
-//    }
-
-    public CustomerResponseDTO getCustomer(Long customerId){
+    public CustomerResponseDTO getCustomer(Long customerId) {
 
         StringBuilder customerURL = new StringBuilder(customerUrl);
         customerURL.append(customerId);
@@ -82,7 +60,7 @@ public class AccountParametersService {
 
         try {
             response = restTemplate.getForEntity(customerURL.toString(), CustomerResponseDTO.class);
-        } catch (HttpClientErrorException ex){
+        } catch (HttpClientErrorException ex) {
             if (ex.getStatusCode() == HttpStatus.NOT_FOUND) {
                 throw new CustomerNotFoundException("Can't find customer with id = " + customerId);
             }
@@ -90,7 +68,7 @@ public class AccountParametersService {
         return response.getBody();
     }
 
-    public List<BillResponseDTO> getBills(Long customerId){
+    public List<BillResponseDTO> getBills(Long customerId) {
 
         StringBuilder billByCustomerURL = new StringBuilder(billByCustomerUrl);
         billByCustomerURL.append(customerId);
@@ -100,7 +78,7 @@ public class AccountParametersService {
 
     }
 
-    public BillResponseGetBillDTO getBill(Long billId){
+    public BillResponseGetBillDTO getBill(Long billId) {
 
         StringBuilder billURL = new StringBuilder(billUrl);
         billURL.append(billId);
@@ -108,7 +86,7 @@ public class AccountParametersService {
 
         try {
             response = restTemplate.getForEntity(billURL.toString(), BillResponseGetBillDTO.class);
-        } catch (HttpClientErrorException ex){
+        } catch (HttpClientErrorException ex) {
             if (ex.getStatusCode() == HttpStatus.NOT_FOUND) {
                 throw new BillNotFoundException("Can't find bill with id = " + billId);
             }

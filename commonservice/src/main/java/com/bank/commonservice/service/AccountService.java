@@ -22,7 +22,7 @@ public class AccountService {
         this.accountMoneyService = accountMoneyService;
     }
 
-    public AccountResponseDTO getAccount(Long customerId){
+    public AccountResponseDTO getAccount(Long customerId) {
         CustomerResponseDTO customerResponseDTO = accountParametersService.getCustomer(customerId);
         List<BillResponseDTO> bills = accountParametersService.getBills(customerId);
 
@@ -34,7 +34,6 @@ public class AccountService {
 
         accountParametersService.checkParametersOneCustomer(customerId, firstBillId, transaction);
         accountParametersService.checkParametersOneCustomer(customerId, secondBillId, transaction);
-        //accountParametersService.checkParametersOneCustomer(customerId, firstBillId, secondBillId, transaction);
         ResponseEntity<String> responsePayment = accountMoneyService.postRequestPayment(firstBillId, transaction);
         ResponseEntity<String> responseAdjustment = accountMoneyService.postRequestAdjustment(secondBillId, transaction);
         BillResponseGetBillDTO paymentToJSON = accountMoneyService.getResponsePayment(responsePayment);

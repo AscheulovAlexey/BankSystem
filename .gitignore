@@ -6,3 +6,5 @@
 /commonservice/.gradle
 /commonservice/build
 /commonservice/gradle
+*.iml
+*.iws
