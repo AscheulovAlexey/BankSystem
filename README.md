@@ -50,22 +50,22 @@ Services customerService, billService and commonService start on localhost ports
 ##### Create bill : 
 ```
 {  
-  "customerId":"1",
-  "balance":"1000"
+  "customerId": 1,
+  "balance": 1000
 }
 ```
 
 ##### Commit adjustment : 
 ```
 {  
-  "adjustment":"500",
+  "adjustment": 500
 } 
 ```
 
 ##### Commit payment : 
 ```
 {  
-  "payment":"500",
+  "payment": 500
 } 
 ```
 
