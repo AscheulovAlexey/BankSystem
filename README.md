@@ -9,7 +9,7 @@ Java RESTful API for money transfers between customers accounts
 
 ### How to run
 ```
-To launch classes Application.java in servecies customerService, accountService and commonService
+To launch classes Application.java in services customerService, accountService and commonService
 ```
 
 Services customerService, billService and commonService start on localhost ports 8080, 8081 and 8082 respectively. 
