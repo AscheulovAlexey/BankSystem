@@ -3,8 +3,6 @@
 /customerservice/.idea
 /customerservice/target
 /commonservice/.idea
-/commonservice/.gradle
-/commonservice/build
-/commonservice/gradle
+/commonservice/target
 *.iml
 *.iws
