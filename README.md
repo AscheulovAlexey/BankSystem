@@ -5,14 +5,23 @@ Java RESTful API for money transfers between customers accounts
 ### Technologies
 - Spring Boot
 - PostrgreSQL
-
+- Docker-compose
 
 ### How to run
 ```
-To launch classes Application.java in services customerService, accountService and commonService
+By Spring
 ```
+To launch classes Application.java in services customerService, accountService and commonService
 
-Services customerService, billService and commonService start on localhost ports 8080, 8081 and 8082 respectively. 
+```
+By Docker-compose
+```
+1. Build app & Dockerfile
+mvn clean install in services customerService, accountService and commonService
+2. Run docker-compose
+docker-compose up
+
+Services customerService, billService and commonService start on ports 8080, 8081 and 8082 respectively. 
 
 
 ### Available Services
