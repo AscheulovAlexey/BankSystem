@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 
 public class AccountMoneyService {
@@ -67,11 +68,11 @@ public class AccountMoneyService {
         return restTemplate.exchange(billAdjustmentURL.toString(), HttpMethod.PUT, entityAdjustment, String.class);
     }
 
-    public BillResponseGetBillDTO getResponsePayment(ResponseEntity<String> responsePayment) throws JsonProcessingException {
+    public BillResponseGetBillDTO getResponsePayment(ResponseEntity<String> responsePayment) throws IOException {
         return objectMapper.readValue(responsePayment.getBody(), BillResponseGetBillDTO.class);
     }
 
-    public BillResponseGetBillDTO getResponseAdjustment(ResponseEntity<String> responseAdjustment) throws JsonProcessingException {
+    public BillResponseGetBillDTO getResponseAdjustment(ResponseEntity<String> responseAdjustment) throws IOException {
         return objectMapper.readValue(responseAdjustment.getBody(), BillResponseGetBillDTO.class);
     }
 

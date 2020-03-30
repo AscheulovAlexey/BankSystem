@@ -1,0 +1,43 @@
+version: '3'
+services:
+  customer-service:
+    build: customerservice
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dbpostgresql
+    networks:
+      - banknetwork
+
+  bill-service:
+    build: billservice
+    ports:
+      - "8081:8081"
+    depends_on:
+      - dbpostgresql
+    networks:
+      - banknetwork
+
+  common-service:
+    build: commonservice
+    ports:
+      - "8082:8082"
+    depends_on:
+      - dbpostgresql
+    networks:
+      - banknetwork
+
+  dbpostgresql:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    networks:
+      - banknetwork
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_MULTIPLE_DATABASES=customerDB,billDB,commonDB
+networks:
+  banknetwork:
+    driver: bridge
